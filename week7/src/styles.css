@@ -19,10 +19,11 @@ li {
   list-style: none;
   color: rgb(135, 135, 135);
   font-weight: 100;
-  line-height: 19px;
+  
   font-size: 16px;
   padding: 0 auto;
   margin: 0 auto;
+  text-align: left;
 }
 img {
   position: relative;

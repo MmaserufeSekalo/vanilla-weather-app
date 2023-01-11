@@ -32,7 +32,7 @@ function tempDisplay(response) {
   document.querySelector(".day").innerHTML = weekDay;
   document.querySelector(".time").innerHTML = hour + ":" + minutes;
   iconElement.setAttribute("src", response.data.condition.icon_url);
-  iconElement.setAttribute("alt", response.data.condition.description)
+  iconElement.setAttribute("alt", response.data.condition.description);
 }
 
 let area = "Polokwane";
@@ -40,3 +40,5 @@ let apiKey = "b4b16ao0bed60a37cdt0a5dcdf865c3b";
 let apiUrl =
   "https://api.shecodes.io/weather/v1/current?query=Polokwane&key=b4b16ao0bed60a37cdt0a5dcdf865c3b&units=metric";
 axios.get(apiUrl).then(tempDisplay);
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", search);
