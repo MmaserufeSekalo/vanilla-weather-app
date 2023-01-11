@@ -23,7 +23,7 @@ function tempDisplay(response) {
   if (minutes < 10) {
     minutes = "0" + minutes;
   }
-  let iconElement = document.querySelector("#icon")
+  let iconElement = document.querySelector("#icon");
   city.innerHTML = response.data.city;
   temeperaturElement.innerHTML = Math.round(response.data.temperature.current);
   descriptionElement.innerHTML = response.data.condition.description;
@@ -31,7 +31,8 @@ function tempDisplay(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   document.querySelector(".day").innerHTML = weekDay;
   document.querySelector(".time").innerHTML = hour + ":" + minutes;
-  iconElement.setAttribute("src",response.data.condition.icon_url)
+  iconElement.setAttribute("src", response.data.condition.icon_url);
+  iconElement.setAttribute("alt", response.data.condition.description)
 }
 
 let area = "Polokwane";
