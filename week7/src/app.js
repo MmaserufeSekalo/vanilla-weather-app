@@ -34,14 +34,19 @@ function tempDisplay(response) {
   iconElement.setAttribute("src", response.data.condition.icon_url);
   iconElement.setAttribute("alt", response.data.condition.description);
 }
-function search(event){
-    event.preventDefault()
-    
+function search(city) {
+  let area = "Polokwane";
+  let apiKey = "b4b16ao0bed60a37cdt0a5dcdf865c3b";
+  let apiUrl =
+    "https://api.shecodes.io/weather/v1/current?query=Polokwane&key=b4b16ao0bed60a37cdt0a5dcdf865c3b&units=metric";
+  axios.get(apiUrl).then(tempDisplay);
 }
-let area = "Polokwane";
-let apiKey = "b4b16ao0bed60a37cdt0a5dcdf865c3b";
-let apiUrl =
-  "https://api.shecodes.io/weather/v1/current?query=Polokwane&key=b4b16ao0bed60a37cdt0a5dcdf865c3b&units=metric";
-axios.get(apiUrl).then(tempDisplay);
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+search()
 let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);
+form.addEventListener("submit", handleSubmit);
