@@ -3,10 +3,12 @@ function tempDisplay(response) {
   let temeperaturElement = document.querySelector("#temperature");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind-speed");
   city.innerHTML = response.data.city;
   temeperaturElement.innerHTML = Math.round(response.data.temperature.current);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
 }
 
 let query = "Polokwane";
