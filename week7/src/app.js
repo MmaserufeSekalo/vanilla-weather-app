@@ -34,7 +34,10 @@ function tempDisplay(response) {
   iconElement.setAttribute("src", response.data.condition.icon_url);
   iconElement.setAttribute("alt", response.data.condition.description);
 }
-
+function search(event){
+    event.preventDefault()
+    
+}
 let area = "Polokwane";
 let apiKey = "b4b16ao0bed60a37cdt0a5dcdf865c3b";
 let apiUrl =
