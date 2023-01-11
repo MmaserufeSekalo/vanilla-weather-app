@@ -49,3 +49,7 @@ a {
   text-decoration: underline;
   color: rgb(88, 88, 236);
 }
+
+.description::first-letter{
+  text-transform:capitalize;
+}
