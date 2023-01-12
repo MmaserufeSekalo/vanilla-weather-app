@@ -23,6 +23,7 @@ function tempDisplay(response) {
   if (minutes < 10) {
     minutes = "0" + minutes;
   }
+  celsiusTemperature = response.data.temperature.current;
   let iconElement = document.querySelector("#icon");
   city.innerHTML = response.data.city;
   temeperaturElement.innerHTML = Math.round(response.data.temperature.current);
@@ -45,14 +46,26 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
-search("Polokwane");
+
+let celsiusTemperature = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 function otherTemp(event) {
   event.preventDefault();
-  alert("linked");
+  let fahTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temeperaturElement = document.querySelector("#temperature");
+  temeperaturElement.innerHTML = Math.round(fahTemperature);
 }
 
-let fah = document.querySelector("#fahrenheit");
+function celsius(event) {
+  let cels = document.querySelector("#temperature");
+  cels.innerHTML = Math.round(celsiusTemperature);
+}
+
+let fah = document.querySelector("#fah");
 fah.addEventListener("click", otherTemp);
+let celsiusTemp = document.querySelector("#celsius");
+celsiusTemp.addEventListener("click", celsius);
+search("Polokwane");
