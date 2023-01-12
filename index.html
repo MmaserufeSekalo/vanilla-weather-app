@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="app">
+        <form id="search-form" class="mb-2">
+          <div class="row">
+            <div class="col-10">
+              <input type="search" placeholder="Type a city" class="form-control" id="city-input">
+            </div>
+            <div class="col-2">
+              <input type="submit" value="Search" class="btn btn-primary">
+            </div>
+          </div>
+        </form>
+        <h1 id="city">Polokwane</h1>
+        <h2>
+          <ul>
+            <li>Last updated on 
+              <span class="day">Tuesday</span> <span class="time">09:36</span>
+            </li>
+            <li class="description" id="description">Sunny</li>
+          </ul>
+          <div class="row">
+            <div class="col">
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                alt="Sunny" id="icon"
+              />
+              <strong class="temp" id="temperature">11 </strong>
+              <span class="units"> °C | <a href="#" id="fah">°F</a></span>
+            </div>
+            <div class="col">
+              <ul>
+                <li> <span>Humidity:</span> <span id="humidity"> Humidity</span> <span>%</span> </li>
+                <li >Wind: <span id="wind-speed">5.36km/h</span> km/h</li>
+              </ul>
+            </div>
+          </div>
+        </h2>
+      </div>
+      <small
+        ><a
+          href="https://github.com/MmaserufeSekalo/vanilla-weather-app"
+          target="_blank"
+          class="open-source"
+          >Open-sourced by</a
+        >
+        , Mmaserufe Sekalo</small
+      >
+    </div>
+
+    <script src="src/app.js"></script>
+  </body>
+</html>
